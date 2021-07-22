@@ -8,7 +8,7 @@ const Signin = () => {
     <div style={{ padding: 100 }}>
       <Space direction="vertical">
         <Button type="primary" onClick={() => {
-            signinWithGoogle()
+            signinWithGoogle('/dashboard')
         }}>Signin with Google</Button>
      </Space>
     </div>
