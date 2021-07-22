@@ -5,6 +5,7 @@ import Router from 'next/router'
 import * as Sentry from '@sentry/browser';
 import * as log from 'loglevel';
 import { AuthProvider } from '../utils/auth';
+import NextSEO from '../components/NextSEO';
 
 // toggle logs for env
 if (process.env.NODE_ENV === 'production') {
@@ -28,6 +29,7 @@ function WebApp(props) {
 
   return (
     <AuthProvider>
+      <NextSEO />
       <Component {...pageProps} />
     </AuthProvider>
   )
