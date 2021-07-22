@@ -45,6 +45,20 @@ function useFirebaseAuth() {
       });
   };
 
+  const signupWithEmail = (email, password, redirect) => {
+    setLoading(true);
+    return firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then((response) => {
+        handleUser(response.user);
+
+        if (redirect) {
+          Router.push(redirect);
+        }
+      });
+  };
+
   const signinWithGoogle = (redirect) => {
     setLoading(true);
     return firebase
@@ -89,6 +103,7 @@ function useFirebaseAuth() {
     user,
     loading,
     signinWithEmail,
+    signupWithEmail,
     signinWithGoogle,
     signinWithGitHub,
     signout,
