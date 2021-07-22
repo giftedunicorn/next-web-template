@@ -1,10 +1,9 @@
 import { Button, Space, DatePicker, Card } from 'antd';
 import { CiCircleFilled } from '@ant-design/icons';
 
-export default function About() {
+const About = () => {
   const onChange = () => {};
 
-  
   return (
     <div style={{ padding: 100 }}>
       <Space direction="vertical">
@@ -16,3 +15,5 @@ export default function About() {
     </div>
   )
 }
+
+export default About

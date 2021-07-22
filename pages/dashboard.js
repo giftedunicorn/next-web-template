@@ -17,7 +17,7 @@ const Dashboard = () => {
     <>
       {user ? (
         <div>
-          <p>{user}</p>
+          <p>{user.email}</p>
           <Button onClick={signout}>
             Sign out
           </Button>
