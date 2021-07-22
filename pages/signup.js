@@ -9,7 +9,7 @@ const Signup = () => {
         <Button type="primary" onClick={() => {
 
         }}>Signup with Google</Button>
-     </Space>
+      </Space>
     </div>
   )
 }
