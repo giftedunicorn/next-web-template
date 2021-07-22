@@ -18,6 +18,29 @@ function useFirebaseAuth() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const unsubscribe = firebase.auth().onIdTokenChanged(handleUser);
+    return () => unsubscribe();
+  }, []);
+
+  /*
+    Assumed that Firebase automatically refreshes the ID token on an hourly basis. 
+    As it turns out, that's not true. Firebase only does so if it is maintaining 
+    an active connect to Firestore or Realtime Database. If you aren't using one 
+    of these, services we need to refresh the tokens ourselves.
+  */
+  
+  // force refresh the token every 10 minutes
+  useEffect(() => {
+    const handle = setInterval(async () => {
+      const user = firebase.auth().currentUser;
+      if (user) await user.getIdToken(true);
+    }, 10 * 60 * 1000);
+
+    // clean up setInterval
+    return () => clearInterval(handle);
+  }, []);
+
   const handleUser = (rawUser) => {
     if (rawUser) {
       const user = formatUser(rawUser)
@@ -93,11 +116,6 @@ function useFirebaseAuth() {
       .signOut()
       .then(() => handleUser(false))
   }
-
-  useEffect(() => {
-    const unsubscribe = firebase.auth().onIdTokenChanged(handleUser);
-    return () => unsubscribe();
-  }, []);
 
   return {
     user,
