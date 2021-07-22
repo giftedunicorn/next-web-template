@@ -20,15 +20,57 @@ function useFirebaseAuth() {
   const handleUser = (rawUser) => {
     if (rawUser) {
       const user = formatUser(rawUser)
-      setLoading(false)
       setUser(user)
+      setLoading(false)
       return user
     } else {
-      setLoading(false)
       setUser(false)
+      setLoading(false)
       return false
     }
   }
+
+  const signinWithEmail = (email, password, redirect) => {
+    setLoading(true);
+    return firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((response) => {
+        handleUser(response.user);
+
+        if (redirect) {
+          Router.push(redirect);
+        }
+      });
+  };
+
+  const signinWithGoogle = (redirect) => {
+    setLoading(true);
+    return firebase
+      .auth()
+      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      .then((response) => {
+        handleUser(response.user);
+
+        if (redirect) {
+          Router.push(redirect);
+        }
+      });
+  };
+
+  const signinWithGitHub = (redirect) => {
+    setLoading(true);
+    return firebase
+      .auth()
+      .signInWithPopup(new firebase.auth.GithubAuthProvider())
+      .then((response) => {
+        handleUser(response.user);
+
+        if (redirect) {
+          Router.push(redirect);
+        }
+      });
+  };
 
   const signout = () => {
     return firebase
@@ -45,6 +87,9 @@ function useFirebaseAuth() {
   return {
     user,
     loading,
+    signinWithEmail,
+    signinWithGoogle,
+    signinWithGitHub,
     signout,
   };
 }
