@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import React, { useState, useEffect } from 'react';
+import { appWithTranslation } from 'next-i18next';
 import App from 'next/app';
 import Head from 'next/head'
 import Router from 'next/router'
@@ -36,4 +37,4 @@ function MyApp(props) {
   )
 }
 
-export default MyApp
+export default appWithTranslation(MyApp);
