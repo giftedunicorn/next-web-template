@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-function WebApp(props) {
+function MyApp(props) {
   const [appReady, setAppReady] = useState(false);
 
   // Page props that were returned  from 'getInitialProps' are stored in the props i.e. pageprops
@@ -36,4 +36,4 @@ function WebApp(props) {
   )
 }
 
-export default WebApp
+export default MyApp
