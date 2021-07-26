@@ -11,6 +11,7 @@
   "dependencies": {
     "@sentry/browser": "^6.10.0",
     "antd": "^4.16.8",
+    "axios": "^0.21.1",
     "babel-plugin-import": "^1.13.3",
     "firebase": "^8.8.0",
     "loglevel": "^1.7.1",
