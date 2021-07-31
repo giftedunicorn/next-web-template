@@ -1,5 +1,6 @@
 import * as log from 'loglevel';
 import axios from 'axios';
+import { APIHOST } from './const';
 axios.defaults.timeout = 30000;
 
 async function axiosHelper({ method, url, name, body }) {
