@@ -5,7 +5,7 @@ const ADMIN_EMAIL = 'admin@rumwebapp.com';
 const APPNAME = 'RUM'
 
 export {
-  APPNAME
+  APPNAME,
   ADMIN_EMAIL,
   APIHOST,
 }

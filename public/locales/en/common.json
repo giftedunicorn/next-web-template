@@ -1,3 +1,18 @@
 {
-  "home": "Home"
+  "appname": "Rumdemo",
+  "home": "Home",
+  "about": "About",
+  "products": "Products",
+  "pricing": "Pricing",
+  "blog": "Blog",
+  "signin": "Sign In",
+  "signup": "Sign Up",
+  "login": "Log In",
+  "github": "GitHub",
+  "terms_of_use": "Terms of Use",
+  "contact": "Contact",
+  "create_free_account": "Create Free Account",
+  "search": "Search",
+  "community": "Community",
+  "support": "Support"
 }

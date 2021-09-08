@@ -1,3 +1,18 @@
 {
-  "home": "首页"
+  "appname": "Rumdemo",
+  "home": "首页",
+  "about": "关于我们",
+  "products": "产品",
+  "pricing": "定价",
+  "blog": "博客",
+  "signin": "登陆",
+  "signup": "注册",
+  "login": "登陆",
+  "github": "GitHub",
+  "terms_of_use": "使用条款",
+  "contact": "联系我们",
+  "create_free_account": "免费注册账号",
+  "search": "搜索",
+  "community": "社区",
+  "support": "帮助"
 }
