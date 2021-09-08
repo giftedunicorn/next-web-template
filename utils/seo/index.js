@@ -5,5 +5,5 @@ import ja from './ja'
 export default {
   'en': en,
   'zh-CN': zhCN,
-  'js': ja,
+  'ja': ja,
 }
