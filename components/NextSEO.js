@@ -57,8 +57,8 @@ const NextSEO = (props) => {
           href: `https://example.com/zh-CN${pathname}`,
         },
         {
-          hrefLang: 'zh-TW',
-          href: `https://example.com/zh-TW${pathname}`,
+          hrefLang: 'ja',
+          href: `https://example.com/ja${pathname}`,
         }
       ]}
     />

@@ -92,6 +92,7 @@ function AppHeader() {
             <Select defaultValue="en" value={currentLanuage} onChange={languageOnChange} bordered={false}>
               <Option value="en">English</Option>
               <Option value="zh-CN">简体中文</Option>
+              <Option value="ja">日本語</Option>
             </Select>
           </Space>
         </Col>
